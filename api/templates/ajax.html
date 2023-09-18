@@ -1,0 +1,23 @@
+<script>
+
+    $(document).ready(function() {
+        $('#myForm').submit(function(event) {
+            event.preventDefault();  // Prevent form submission
+    
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'sendmail' %}",
+                data: $(this).serialize(),
+                success: function(response) {
+                    // Process the response from the server (if needed)
+                    alert(response.message);
+                },
+                error: function(xhr, status, error) {
+                    // Handle error cases
+                    console.error(error);
+                }
+            });
+        });
+    });
+    
+</script>

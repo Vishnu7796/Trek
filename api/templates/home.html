@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+</head>
+<body>
+    {% for x in hi %}
+    <div>
+        <img src='{{x.image}}'>
+        {% for y in x.value %}
+            <p>{{y}}</p>
+        {% endfor %}
+
+        <a href = "{% url 'details' param=x.pk %}"> Click To View </a>
+        <br>
+        <br>
+    </div>
+    {% endfor %}
+
+    <form id='myForm'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Submit</button>
+    </form>
+    
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}" ></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30243.5561197391!2d73.78025699999999!3d18.6440385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9c02954e8cb%3A0x525d708de1d526f2!2sAkurdi%2C%20Pimpri-Chinchwad%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1692986864249!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    {% include 'ajax.html' %}
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <img src = '{{image}}'>
+    <h1>{{name}} </h1>
+    <br>
+    <h2>Trek Details</h2>
+    <b>Date</b> {{startDate}}-{{endDate}}
+    <br>
+    <b>Location</b> {{location}}
+    <br>
+    <br>
+    {{desc}}
+    <br>
+    <h2> Upcoming Batches </h2>
+    {% for x in upcomingBatches %}
+        <li> {{x}} </li>
+    {% endfor %}
+    <br>
+    <h2> Iternary </h2>
+    {% for x in iternary %}
+        <li> {{x}} </li>
+    {% endfor %}
+    <br>    
+    <h2> Trek Event Details </h2>
+    {% for x in trekEventDetails %}
+        <li> {{x}} </li>
+    {% endfor %}
+    <br>   
+    <h2> Cost Includes </h2>
+    {% for x in costIncludes %}
+        <li> {{x}} </li>
+    {% endfor %}
+    <br>
+    <h2> Things To Carry </h2>
+    {% for x in thingsToCarry %}
+        <li> {{x}} </li>
+    {% endfor %}
+    <br>   
+    <h2> PickUp Points </h2>
+    {% for x in pickupPoints %}
+        {{x}} 
+        <br>
+    {% endfor %}
+    <br>   
+    <h2> FAQ's </h2>
+    {% for x in faq %}
+        <li> {{x}} </li>
+    {% endfor %}
+    <br>   
+</body>
+</html>
